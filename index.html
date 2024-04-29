@@ -40,10 +40,16 @@
 
     <link rel="manifest" href="site.webmanifest">
 
-    <meta property="og:site_name" content="GES: Generalized Exponential Splatting for Efficient Radiance Field Rendering" />
+    <meta property="og:site_name" content="X-Diffusion: Generating Detailed 3D MRI
+    Volumes From a Single Image Using
+    Cross-Sectional Diffusion Models" />
     <meta property="og:type" content="video.other" />
-    <meta property="og:title" content="GES: Generalized Exponential Splatting for Efficient Radiance Field Rendering" />
-    <meta property="og:description" content="GES: Generalized Exponential Splatting for Efficient Radiance Field Rendering, 2023." />
+    <meta property="og:title" content="X-Diffusion: Generating Detailed 3D MRI
+    Volumes From a Single Image Using
+    Cross-Sectional Diffusion Models" />
+    <meta property="og:description" content="X-Diffusion: Generating Detailed 3D MRI
+    Volumes From a Single Image Using
+    Cross-Sectional Diffusion Models" />
 
     <script src="assets/js/video_comparison.js"></script>
     <script type="module" src="https://unpkg.com/@google/model-viewer@2.0.1/dist/model-viewer.min.js"></script>
@@ -64,58 +70,28 @@
             <!--<h1 class="text-center">[ECCV 2024]</h1>-->
             <br>
             <br>
-            <h1 class="text-center">Bourigault Emmanuelle<span>&#42;</span>, Abdullah Hamdi<span>&#42;</span> , Amir Jamaludin</h1>
-            <h1 class="text-center">VGG, University of Oxford</h1>
-            <h1 class="text-center"><span>&#42;</span> Equal Contribution</h1>
             <br>
         </div>
         <div class="container align-items-center">
             <div class="container author-container">
                 <div class="row authors">
-                   <!--<p style="text-align:center">Anonymous</p>
+                    <div class="col">
+                        <h5><a href="https://emmanuellebourigault.com/">Emmanuelle Bourigault<span>&#42;</span> <sup>1</sup> </a></h5>
+                    </div>
                    <div class="col">
-                        <h5><a href="https://abdullahamdi.com/">Abdullah Hamdi<sup>1</sup> </a></h5>
+                        <h5><a href="https://abdullahamdi.com/">Abdullah Hamdi<span>&#42;</span> <sup>1</sup> </a></h5>
                     </div>
                     <div class="col">
-                        <h5><a href="https://lukemelas.github.io/">Luke Melas-Kyriazi<sup>1</sup> </a></h5>
-                    </div>
-                    <div class="col">
-                        <h5><a href="https://guochengqian.github.io/">Guocheng
-                                Qian<sup>2,4</sup> </a></h5>
-                    </div>
-                    <div class="col">
-                        <h5><a class="text-center" href="https://cemse.kaust.edu.sa/people/person/jinjie-mai">Jinjie Mai<sup>2</sup></a></h5>
+                        <h5><a href="">Amir Jamaludin<sup>1</sup> </a></h5>
                     </div>
                 </div>
-                <div class="row authors">
-                    <div class="col">
-                        <h5><a href="https://ruoshiliu.github.io/">Ruoshi Liu<sup>3</sup></a></h5>
-                    </div>
-                    <div class="col">
-                        <h5><a href="https://www.cs.columbia.edu/~vondrick/">Carl Vondrick<sup>3</sup></a></h5>
-                    </div>
-                    <div class="col">
-                        <h5><a href="https://www.bernardghanem.com/">Bernard Ghanem<sup>2</sup></a></h5>
-                    </div>
-                    <div class="col">
-                        <h5><a href="https://www.robots.ox.ac.uk/~vedaldi/">Andrea Vedaldi<sup>1</sup></a></h5>
-                    </div>
                 </div>
                 <div class="row affiliations">
                     <div class="col">
                         <h6 class="text-center"><a class="text-center"><sup>1</sup>Visual Geometry Group, University of Oxford</a></h6>
                     </div>
-                    <div class="col">
-                        <h6 class="text-center"><a class="text-center"><sup>2</sup>King Abdullah University of Science and
-                                Technology (KAUST)</a></h6>
-                    </div>
-                    <div class="col">
-                        <h6 class="text-center"><a class="text-center"><sup>3</sup>Columbia University</a></h6>
-                    </div>
-                    <div class="col">
-                        <h6 class="text-center"><a class="text-center"><sup>4</sup>Snap Inc</a></h6>
-                    </div>-->
                 </div>
+                <h6 class="text-center"><span>&#42;</span> Equal Contribution</h6>
             </div>
         </div>
         <div class="container align-items-center">
@@ -191,7 +167,7 @@
                 In training, this allows X-Diffusion to train on MRIs from all types of cross-sections, unlike the typically followed common 3 planes (coronal, sagittal, andaxial) </p>
             <div class="row justify-content-center">
                 <div class="col-sm-6">
-                    <img src="assets/Volume_Avg.gif" style="max-width: 100%; object-fit: contain"/>
+                    <img src="assets/Volume_Averaging.gif" style="max-width: 100%; object-fit: contain"/>
                 </div>
             </div>        
             <!-- <div class="row">
@@ -206,22 +182,37 @@
                 </div>
             </div> -->
             
-        <hr class="divider" />
-            <h2> Generated Brain Volumes from Single Slice</h2>
-            <div id="example1" class="bal-container-small">
-            <div class="row">
-                <div class="bal-after">
-                    <img src="assets/Brain_Generated.png" style='height: 100%; width: 100%; object-fit: contain'/>
-                </div>
-            </div> 
-        </div>
 
         <hr class="divider" />
         <div class="container">
             <h2> Main Results</h2>
+            <h3>We demonstrate high performance of X-Diffusion on BRATS dataset (see Table 1 and Figure 6) compared to baselines. We also show that X-Diffusion preserves key features of the MRI notably tumour profiles (see Figure 4). X-Diffusion shows good reconstruction capability on out-of-domain dataset such as knee MRIs (see Applications below).</h3>
             <div class="row">
                 <div class="col-sm-12">
-                    <img src="assets/Main_Table.png" style="max-width: 100%;"/>
+                    <img src="assets/Table1_XDiffusion.png" style="max-width: 100%;"/>
+                </div>
+            </div>
+            <h2> Generated Brain Volumes from Single Slice</h2>
+            <div class="row">
+                <div class="col-sm-12">
+                    <img src="assets/Brain_Generation_XDiffusion.png" style="max-width: 100%;"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <img src="assets/XDiffusion_SegMaps.png" style="max-width: 100%;"/>
+                </div>
+            </div>
+            <h2> Generated Whole Body MRIs</h2>
+            <div class="row">
+                <div class="col-sm-12">
+                    <img src="assets/Error_MRI_Generation.png" style="max-width: 100%;"/>
+                </div>
+            </div>
+            <h2> Applications</h2>
+            <div class="row">
+                <div class="col-sm-12">
+                    <img src="assets/Knee_Fast_MRIs.gif" style="max-width: 100%;"/>
                 </div>
             </div>
         </div>

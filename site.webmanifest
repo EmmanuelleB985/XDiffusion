@@ -1,6 +1,6 @@
 {
-    "name": "GES: Generalized Exponential Splatting for Efficient Radiance Field Rendering",
-    "short_name": "GES",
+    "name": "X-Diffusion: ",
+    "short_name": "X-Diffusion: Generating Detailed 3D MRI Volumes From a Single Image Using Cross-Sectional Diffusion Models",
     "icons": [{
         "src": "assets/logo.png",
         "sizes": "290x288",

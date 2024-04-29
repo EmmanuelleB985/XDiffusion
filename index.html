@@ -1,1 +1,357 @@
-# XDiffusion.github.io
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XB3PR2Y1TQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-XB3PR2Y1TQ');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>X-Diffusion: Generating Detailed 3D MRI
+        Volumes From a Single Image Using
+        Cross-Sectional Diffusion Models</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600' rel='stylesheet'
+        type='text/css'>
+    <link rel="stylesheet" href="assets/css/Highlight-Clean.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- compare two images -->
+    <!-- <link rel="stylesheet" href="assets/css/bulma.min.css"> -->
+    <link rel="stylesheet" href="assets/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="assets/css/bulma-slider.min.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/logo.png">
+
+
+    <link rel="manifest" href="site.webmanifest">
+
+    <meta property="og:site_name" content="GES: Generalized Exponential Splatting for Efficient Radiance Field Rendering" />
+    <meta property="og:type" content="video.other" />
+    <meta property="og:title" content="GES: Generalized Exponential Splatting for Efficient Radiance Field Rendering" />
+    <meta property="og:description" content="GES: Generalized Exponential Splatting for Efficient Radiance Field Rendering, 2023." />
+
+    <script src="assets/js/video_comparison.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer@2.0.1/dist/model-viewer.min.js"></script>
+
+    <script src="assets/js/bulma-carousel.min.js"></script>
+    <script src="assets/js/bulma-slider.min.js"></script>
+</head>
+
+<body>
+
+    <div class="highlight-clean" style="padding-bottom: 10px;">
+        <div class="container" style="max-width: 100%;">
+            <br>
+            <h1 class="text-center">X-Diffusion: Generating Detailed 3D MRI
+                Volumes From a Single Image Using
+                Cross-Sectional Diffusion Models</h1>
+            <br>
+            <!--<h1 class="text-center">[ECCV 2024]</h1>-->
+            <br>
+            <br>
+            <h1 class="text-center">Bourigault Emmanuelle<span>&#42;</span>, Abdullah Hamdi<span>&#42;</span> , Amir Jamaludin</h1>
+            <h1 class="text-center">VGG, University of Oxford</h1>
+            <h1 class="text-center"><span>&#42;</span> Equal Contribution</h1>
+            <br>
+        </div>
+        <div class="container align-items-center">
+            <div class="container author-container">
+                <div class="row authors">
+                   <!--<p style="text-align:center">Anonymous</p>
+                   <div class="col">
+                        <h5><a href="https://abdullahamdi.com/">Abdullah Hamdi<sup>1</sup> </a></h5>
+                    </div>
+                    <div class="col">
+                        <h5><a href="https://lukemelas.github.io/">Luke Melas-Kyriazi<sup>1</sup> </a></h5>
+                    </div>
+                    <div class="col">
+                        <h5><a href="https://guochengqian.github.io/">Guocheng
+                                Qian<sup>2,4</sup> </a></h5>
+                    </div>
+                    <div class="col">
+                        <h5><a class="text-center" href="https://cemse.kaust.edu.sa/people/person/jinjie-mai">Jinjie Mai<sup>2</sup></a></h5>
+                    </div>
+                </div>
+                <div class="row authors">
+                    <div class="col">
+                        <h5><a href="https://ruoshiliu.github.io/">Ruoshi Liu<sup>3</sup></a></h5>
+                    </div>
+                    <div class="col">
+                        <h5><a href="https://www.cs.columbia.edu/~vondrick/">Carl Vondrick<sup>3</sup></a></h5>
+                    </div>
+                    <div class="col">
+                        <h5><a href="https://www.bernardghanem.com/">Bernard Ghanem<sup>2</sup></a></h5>
+                    </div>
+                    <div class="col">
+                        <h5><a href="https://www.robots.ox.ac.uk/~vedaldi/">Andrea Vedaldi<sup>1</sup></a></h5>
+                    </div>
+                </div>
+                <div class="row affiliations">
+                    <div class="col">
+                        <h6 class="text-center"><a class="text-center"><sup>1</sup>Visual Geometry Group, University of Oxford</a></h6>
+                    </div>
+                    <div class="col">
+                        <h6 class="text-center"><a class="text-center"><sup>2</sup>King Abdullah University of Science and
+                                Technology (KAUST)</a></h6>
+                    </div>
+                    <div class="col">
+                        <h6 class="text-center"><a class="text-center"><sup>3</sup>Columbia University</a></h6>
+                    </div>
+                    <div class="col">
+                        <h6 class="text-center"><a class="text-center"><sup>4</sup>Snap Inc</a></h6>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+        <div class="container align-items-center">
+            <div class="row text-center mx-auto">
+                <div class="col-sm-4">
+                    <a href="" target="_blank" class="link-block w-inline-block">
+                        <img src="assets/media/arxiv_paper.png" alt="paper" class="img-fluid" style="height:100px" /></a>
+                    <br>
+                    <div class="text-block-2"><strong class="bold-text-nerf_v2">Arxiv</strong></div>
+                </div>
+                <div class="col-sm-4">
+                    <a href="" target="_blank" class="link-block w-inline-block">
+                        <img src="assets/media/github.png" alt="github" class="img-fluid" style="height:100px" /></a>
+                    <br>
+                    <div class="text-block-2"><strong class="bold-text-nerf_v2">Code</strong></div>
+                </div>
+                <div class="col-sm-4">
+                    <a href="" target="_blank" class="link-block w-inline-block">
+                        <img src="assets/media/video_logo.png" alt="Youtube" class="img-fluid" style="height:100px" /></a>
+                    <br>
+                    <div class="text-block-2"><strong class="bold-text-nerf_v2">Video</strong></div>
+                </div>
+            </div>
+        </div>
+        <hr class="divider" />
+        <div class="row justify-content-center">
+            <div class="col-sm-6">
+                <img src="assets/XDiffusion.gif" style="max-width: 100%; object-fit: contain"/>
+            </div>
+        </div>   
+        <div class="container" style="max-width: col-sm-12;">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>Abstract</h2>
+                    <p style="text-align: justify">
+                        We present X-Diffusion, a cross-sectional diffusion model tailored for Magnetic Resonance Imaging (MRI) data. X-
+                        Diffusion is capable of generating the entire MRI volume from just a single MRI slice or optionally from few multiple slices, setting new benchmarks in the precision of synthesized MRIs from extremely sparse observations. The uniqueness lies in the novel view-conditional training and
+                        inference of X-Diffusion on MRI volumes, allowing for generalized MRIlearning. The generated MRIs retain essential features of the original MRI, including tumour profiles,
+                        spine curvature, brain volume, and beyond.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <hr class="divider" />
+        <div class="container" style="max-width: col-sm-12;">
+            <h2>Video</h2>
+            <div class="row justify-content-center">
+                <iframe width="600" height="378" src="assets/video/XDiffusion_Video.mp4" title="X-Diffusion" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ></iframe>
+            </div>
+        </div>
+
+        <hr class="divider" />
+        <div class="container">
+            <h2> Cross-Sectional MRI Synthesis</h2>
+            <p>From an MRI slice <span class="math inline"><em>x</em> ∈ ℝ<sup><em>H</em> × <em>W</em></sup></span> , we seek to synthesize the entire MRI volume <span
+                class="math inline">𝒳 ∈ ℝ<sup><em>H</em> × <em>W</em> × <em>D</em></sup></span>. The fundamental idea stems from the analogy that a 3D volume can be built crosswise by stacking slices from a certain direction, just like a loaf of bread. The full target volume can be reconstructed from limited slices by generating target slices indexed by their depth <span
+                class="math inline"><em>d</em> ∈ [1, 2, ..., <em>D</em>]</span> in the MRI volume conditioned on a certain direction <span class="math inline"><em>R</em></span> where the volume is oriented. This simplifies the learning of cross-sections since the rotated MRI volume <span class="math inline"><em>R</em>𝒳</span> will have the same size <span
+                class="math inline"><em>H</em> × <em>W</em> × <em>D</em></span>  as the original volume where zero padding is used. For simplicity of the processing of the data, we use the same dimensions for all directions (<span
+                class="math inline"><em>H</em> = <em>W</em> = <em>D</em></span>).
+            </p>
+            <p> X-Diffusion model is trained with cross-sections from all different directions <span class="math inline"><em>R</em></span> and all different depths <span class="math inline"><em>d</em></span>, which allows it to generate the target from any arbitrary rotation and depth.
+                At inference , X-Diffusion is applied <span class="math inline"><em>D</em></span> times with <span
+                class="math inline"><em>d</em> ∈ [1, 2, .., <em>D</em>]</span> from an arbitrary orientation <span class="math inline"><em>R</em><sub><em>i</em></sub></span> to obtain the <em>view-conditional volume</em> <span
+                class="math inline">𝒳<sub><em>R</em><sub><em>i</em></sub></sub></span>.</p>
+            <div class="row justify-content-center">
+                <div class="col-sm-6">
+                    <img src="assets/View_Conditioning.png" style="max-width: 100%; object-fit: contain"/>
+                </div>
+            </div>
+            <h2> Multi-View MRI Volume Generation</h2>
+            <p>One advantage of our cross-sectional diffusion is that it can learn and generate the volume <span class="math inline">𝒳<sub><em>R</em><sub><em>i</em></sub></sub></span> from any arbitrary view direction <span class="math inline"><em>R</em><sub><em>i</em></sub></span>.
+                In training, this allows X-Diffusion to train on MRIs from all types of cross-sections, unlike the typically followed common 3 planes (coronal, sagittal, andaxial) </p>
+            <div class="row justify-content-center">
+                <div class="col-sm-6">
+                    <img src="assets/Volume_Avg.gif" style="max-width: 100%; object-fit: contain"/>
+                </div>
+            </div>        
+            <!-- <div class="row">
+                <div class="col-sm-6 d-flex align-items-center" style="flex-direction: column;">
+                    <img src="assets/Multi_Volume_Averageing.png" style='height: 100%; width: 100%; object-fit: contain'/>
+                </div>
+            </div> 
+             
+           <div class="row">
+                <div class="col-sm-12 text-center">
+                    <img src="assets/gef_gs.png" style="max-width: 80%;"/>
+                </div>
+            </div> -->
+            
+        <hr class="divider" />
+            <h2> Generated Brain Volumes from Single Slice</h2>
+            <div id="example1" class="bal-container-small">
+            <div class="row">
+                <div class="bal-after">
+                    <img src="assets/Brain_Generated.png" style='height: 100%; width: 100%; object-fit: contain'/>
+                </div>
+            </div> 
+        </div>
+
+        <hr class="divider" />
+        <div class="container">
+            <h2> Main Results</h2>
+            <div class="row">
+                <div class="col-sm-12">
+                    <img src="assets/Main_Table.png" style="max-width: 100%;"/>
+                </div>
+            </div>
+        </div>
+
+        <hr class="divider" />
+           <!--<div class="container">
+                    <h2>Citation</h2>
+                    <code>
+                        @InProceedings{hamdi_2024_CVPR,<br>
+                        &nbsp; title  = {GES: Generalized Exponential Splatting for Efficient Radiance Field Rendering},<br>
+                        &nbsp; author = {Hamdi, Abdullah and Melas-Kyriazi, Luke and Qian, Guocheng and Mai, Jinjie and Liu, Ruoshi and Vondrick, Carl and Ghanem, Bernard and Vedaldi, Andrea},<br>
+                        &nbsp; booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},<br>
+                        &nbsp; year   = {2024},<br>
+                    }</code>
+                </div>-->
+            </div>
+        </div>
+        <!-- <div class="container">
+            <h2> Method</h2>
+            <h3>Generalized Exponential Splatting</h3>
+            <p> We extend the GEF to a Generalized Exponential Splatting (GES) framework to offer a plug-and-play replacement for Gaussian Splatting.</p>
+            <p>We leverage a generalized exponential form, here termed Generalized Exponential splatting, which for location \( x \) in 3D space and a positive definite matrix \( \Sigma \), is defined by:</p>
+            <p>\[
+                L(x; \mu, \Sigma, \beta) = \exp \left\{ -\frac{1}{2} [(x - \mu)^{T}\Sigma^{-1}(x - \mu)]^\beta \right\},
+            \]</p>
+            <p>where \( \mu \) is the location parameter and \( \Sigma \) is the covariance matrix equivalence in Gaussian Splatting. \( \beta \) is a shape parameter that controls the sharpness of the splat. When \( \beta = 2 \), this formulation is equivalent to Gaussian splatting.</p>
+            
+            <h3>Image-Based Laplacian Guidance</h3>
+            <p>Our method incorporates Laplacian guidance via a Difference of Gaussians (DoG) filter to enhance edge-aware optimization in image reconstruction tasks. The DoG filter acts as a band-pass filter, emphasizing the edges by subtracting a blurred version of the image from another less blurred version, thus approximating the second spatial derivative of the image. This operation is mathematically represented as:</p>
+            <p>\[
+                \text{DoG}(I) = G(I, \sigma_1) - G(I, \sigma_2),
+            \]</p>
+            <p>where \( G(I, \sigma) \) denotes the Gaussian blur operation on image \( I \) with standard deviation \( \sigma \), and \( \sigma_1 < \sigma_2 \). The choice of \( \sigma \) values dictates the scale of edges to be highlighted. We chose \( \sigma_1 = 2 \sigma_2 \) to ensure the band-pass filter.</p>
+            <p>The filtered image is then used to generate an edge-aware mask \( M \) through a pixel-wise comparison to a threshold value. This mask is utilized to direct the loss function to prioritize discrepancies in regions with high-frequency information—typically corresponding to edges and textures. The edge-aware loss component \( \mathcal{L}_{\text{Laplace}} \) is defined as:</p>
+            <p>\[
+                \mathcal{L}_{\text{Laplace}} = \lVert (I - I_{\text{gt}}) \cdot M \rVert_1,
+            \]</p>
+            <p>where \( I \) is the reconstructed image, \( I_{\text{gt}} \) is the ground truth, and \( \lVert \cdot \rVert_1 \) denotes the L1 norm. This term is integrated into the overall loss, as shown later. The Mask is targeted at a certain frequency range predetermined and normalized between 0 (all frequencies) and 100% (highly frequent regions). We use a linear schedule to determine these target values during the optimization of GES. </p>
+            <div class="row">
+                <div class="col-sm-12">
+                    <img src="assets/laplacian_mask.png" style="max-width: 100%;"/>
+                </div>
+            </div>
+        </div>
+
+
+        <hr class="divider" />
+        <div class="container">
+            <h2> GES can be Used as A Drop-In Replacement of Gaussian Splatting to Improve Accuracy and Reduce Size in 3D Reconstruction </h2> -->
+            <!-- <div class="row">
+                <div class="col-sm-12">
+                    <img src="assets/reconstruction.png" style="max-width: 100%;"/>
+                </div>
+            </div> -->
+        <!-- </div> -->
+      
+        
+        <!-- <hr class="divider" />
+        <div class="container">
+            <h2> GES for Fast 3D Generation</h2>
+            <p> GES is adapted to modern 3D generation pipelines using score distillation sampling from a 2D text-to-image model \cite{DreamFusion}, replacing Gaussian Splatting for improved efficiency. </p>
+            <div class="row">
+                <div class="col-sm-12">
+                    <img src="assets/gen3d.png" style="max-width: 100%;"/>
+                </div>
+            </div>
+        </div>
+       -->
+        
+        
+        <!-- Footer -->
+        <hr class="divider" />
+        <footer class="footer">
+            <div class="container">
+                <div class="content has-text-centered">
+                    <a class="icon-link" href="assets/videos/nerfies_paper.pdf">
+                        <i class="fas fa-file-pdf"></i>
+                    </a>
+                    <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <div class="columns is-centered">
+                    <div class="column is-8">
+                        <div class="content">
+                            <p>
+                                This website is licensed under a <a rel="license"
+                                    href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                                    Commons Attribution-ShareAlike 4.0 International License</a>.
+                            </p>
+                            <p>
+                                We borrow the <a href="https://dreamfusion3d.github.io/">source code</a> for our
+                                website.
+                                We thank the authors of DreamFusion for their great templates.
+                                <!-- we just ask that you link back to this page in the footer.
+                            Please remember to remove the analytics code included in the header of the website which
+                            you do not want on your website. -->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://polyfill.io/v3/polyfill.js?features=IntersectionObserver"></script>
+        <script src="assets/js/yall.js"></script>
+        <script>
+            yall({
+                observeChanges: true
+            });
+        </script>
+        <script src="assets/js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js">
+        </script>
+        <script src="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/js/webflow.fd002feec.js"></script>
+        <!-- Import the component -->
+
+        <script>
+            document.addEventListener('DOMContentLoaded', (event) => {
+                var video = document.getElementById('speed025');
+                video.playbackRate = 0.1; // Play at half speed
+            });
+        </script>
+       
+        <script>
+            new BeforeAfter({
+                id: '#example1'
+            });
+        </script>
+</body>
+
+</html>

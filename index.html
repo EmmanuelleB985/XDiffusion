@@ -4,7 +4,6 @@
 <head>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XB3PR2Y1TQ"></script>
     <script>
@@ -76,19 +75,19 @@
             <div class="container author-container">
                 <div class="row authors">
                     <div class="col">
-                        <h5><a href="https://emmanuellebourigault.com/">Emmanuelle Bourigault<span>&#42;</span> <sup>1</sup> </a></h5>
+                        <h5><a href="https://emmanuellebourigault.com/">Emmanuelle Bourigault<span>&#42;</span> </a></h5>
                     </div>
                    <div class="col">
-                        <h5><a href="https://abdullahamdi.com/">Abdullah Hamdi<span>&#42;</span> <sup>1</sup> </a></h5>
+                        <h5><a href="https://abdullahamdi.com/">Abdullah Hamdi<span>&#42;</span> </a></h5>
                     </div>
                     <div class="col">
-                        <h5><a href="">Amir Jamaludin<sup>2</sup> </a></h5>
+                        <h5><a href="">Amir Jamaludin </a></h5>
                     </div>
                 </div>
                 </div>
                 <div class="row affiliations">
                     <div class="col">
-                        <h6 class="text-center"><a class="text-center"><sup>1</sup>Visual Geometry Group, University of Oxford</a></h6>
+                        <h6 class="text-center"><a class="text-center">Visual Geometry Group, University of Oxford</a></h6>
                     </div>
                 </div>
                 <h6 class="text-center"><span>&#42;</span> Equal Contribution</h6>
@@ -119,7 +118,7 @@
         <hr class="divider" />
         <div class="row justify-content-center">
             <div class="col-sm-6">
-                <img src="assets/XDiffusion.gif" style="max-width: 100%; object-fit: contain"/>
+                <img src="assets/Brain_generation.gif" style="max-width: 100%; object-fit: contain"/>
             </div>
         </div>   
         <div class="container" style="max-width: col-sm-12;">
@@ -141,6 +140,14 @@
             <h2>Video</h2>
             <div class="row justify-content-center">
                 <iframe width="600" height="378" src="assets/video/XDiffusion_Video.mp4" title="X-Diffusion" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ></iframe>
+            </div>
+        </div>
+
+        <hr class="divider" />
+        <div class="container" style="max-width: col-sm-12;">
+            <h2>Pipeline</h2>
+            <div class="row justify-content-center">
+                <iframe width="600" height="378" src="assets/XDiffusion.gif" title="X-Diffusion" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ></iframe>
             </div>
         </div>
 
@@ -182,25 +189,24 @@
                 </div>
             </div> -->
             
-
         <hr class="divider" />
         <div class="container">
             <h2> Main Results</h2>
-            <p style="text-align: justify">We demonstrate high performance of X-Diffusion on BRATS dataset (see Table 1 and Figure 6) compared to baselines. We also show that X-Diffusion preserves key features of the MRI notably tumour profiles (see Figure 4). X-Diffusion shows good reconstruction capability on out-of-domain dataset such as knee MRIs (see Applications below). </p>
+            <p style="text-align: justify">We demonstrate high performance of X-Diffusion on BRATS dataset (see Table 1) compared to baselines. From a single slice from any axis, it generates the full 3D volume. Furthermore, we show that X-Diffusion preserves key features of the MRI notably tumour profiles. X-Diffusion shows good reconstruction capability on out-of-domain dataset such as knee MRIs (see Applications below). </p>
             <div class="row">
                 <div class="col-sm-12">
-                    <img src="assets/Table1_XDiffusion.png" style="max-width: 100%;"/>
+                    <img src="assets/XDiffusion_Table.png" style="max-width: 90%;"/>
                 </div>
             </div>
             <h2> Generated Brain Volumes from Single Slice</h2>
             <div class="row">
                 <div class="col-sm-12">
-                    <img src="assets/Brain_Generation_XDiffusion.png" style="max-width: 100%;"/>
+                    <img src="assets/Brain_Generation_XDiffusion.png" style="max-width: 90%;"/>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <img src="assets/XDiffusion_SegMaps.png" style="max-width: 100%;"/>
+                    <img src="assets/Brain_Seg_Maps.png" style="max-width: 90%;"/>
                 </div>
             </div>
             <h2> Generated Whole Body MRIs</h2>

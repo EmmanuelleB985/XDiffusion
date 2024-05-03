@@ -66,7 +66,6 @@
                 Volumes From a Single Image Using
                 Cross-Sectional Diffusion Models</h1>
             <br>
-            <!--<h1 class="text-center">[ECCV 2024]</h1>-->
             <br>
             <br>
             <br>
@@ -177,17 +176,6 @@
                     <img src="assets/Volume_Averaging.gif" style="max-width: 100%; object-fit: contain"/>
                 </div>
             </div>        
-            <!-- <div class="row">
-                <div class="col-sm-6 d-flex align-items-center" style="flex-direction: column;">
-                    <img src="assets/Multi_Volume_Averageing.png" style='height: 100%; width: 100%; object-fit: contain'/>
-                </div>
-            </div> 
-             
-           <div class="row">
-                <div class="col-sm-12 text-center">
-                    <img src="assets/gef_gs.png" style="max-width: 80%;"/>
-                </div>
-            </div> -->
             
         <hr class="divider" />
         <div class="container">
@@ -247,58 +235,6 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="container">
-            <h2> Method</h2>
-            <h3>Generalized Exponential Splatting</h3>
-            <p> We extend the GEF to a Generalized Exponential Splatting (GES) framework to offer a plug-and-play replacement for Gaussian Splatting.</p>
-            <p>We leverage a generalized exponential form, here termed Generalized Exponential splatting, which for location \( x \) in 3D space and a positive definite matrix \( \Sigma \), is defined by:</p>
-            <p>\[
-                L(x; \mu, \Sigma, \beta) = \exp \left\{ -\frac{1}{2} [(x - \mu)^{T}\Sigma^{-1}(x - \mu)]^\beta \right\},
-            \]</p>
-            <p>where \( \mu \) is the location parameter and \( \Sigma \) is the covariance matrix equivalence in Gaussian Splatting. \( \beta \) is a shape parameter that controls the sharpness of the splat. When \( \beta = 2 \), this formulation is equivalent to Gaussian splatting.</p>
-            
-            <h3>Image-Based Laplacian Guidance</h3>
-            <p>Our method incorporates Laplacian guidance via a Difference of Gaussians (DoG) filter to enhance edge-aware optimization in image reconstruction tasks. The DoG filter acts as a band-pass filter, emphasizing the edges by subtracting a blurred version of the image from another less blurred version, thus approximating the second spatial derivative of the image. This operation is mathematically represented as:</p>
-            <p>\[
-                \text{DoG}(I) = G(I, \sigma_1) - G(I, \sigma_2),
-            \]</p>
-            <p>where \( G(I, \sigma) \) denotes the Gaussian blur operation on image \( I \) with standard deviation \( \sigma \), and \( \sigma_1 < \sigma_2 \). The choice of \( \sigma \) values dictates the scale of edges to be highlighted. We chose \( \sigma_1 = 2 \sigma_2 \) to ensure the band-pass filter.</p>
-            <p>The filtered image is then used to generate an edge-aware mask \( M \) through a pixel-wise comparison to a threshold value. This mask is utilized to direct the loss function to prioritize discrepancies in regions with high-frequency information—typically corresponding to edges and textures. The edge-aware loss component \( \mathcal{L}_{\text{Laplace}} \) is defined as:</p>
-            <p>\[
-                \mathcal{L}_{\text{Laplace}} = \lVert (I - I_{\text{gt}}) \cdot M \rVert_1,
-            \]</p>
-            <p>where \( I \) is the reconstructed image, \( I_{\text{gt}} \) is the ground truth, and \( \lVert \cdot \rVert_1 \) denotes the L1 norm. This term is integrated into the overall loss, as shown later. The Mask is targeted at a certain frequency range predetermined and normalized between 0 (all frequencies) and 100% (highly frequent regions). We use a linear schedule to determine these target values during the optimization of GES. </p>
-            <div class="row">
-                <div class="col-sm-12">
-                    <img src="assets/laplacian_mask.png" style="max-width: 100%;"/>
-                </div>
-            </div>
-        </div>
-
-
-        <hr class="divider" />
-        <div class="container">
-            <h2> GES can be Used as A Drop-In Replacement of Gaussian Splatting to Improve Accuracy and Reduce Size in 3D Reconstruction </h2> -->
-            <!-- <div class="row">
-                <div class="col-sm-12">
-                    <img src="assets/reconstruction.png" style="max-width: 100%;"/>
-                </div>
-            </div> -->
-        <!-- </div> -->
-      
-        
-        <!-- <hr class="divider" />
-        <div class="container">
-            <h2> GES for Fast 3D Generation</h2>
-            <p> GES is adapted to modern 3D generation pipelines using score distillation sampling from a 2D text-to-image model \cite{DreamFusion}, replacing Gaussian Splatting for improved efficiency. </p>
-            <div class="row">
-                <div class="col-sm-12">
-                    <img src="assets/gen3d.png" style="max-width: 100%;"/>
-                </div>
-            </div>
-        </div>
-       -->
-        
         
         <!-- Footer -->
         <hr class="divider" />

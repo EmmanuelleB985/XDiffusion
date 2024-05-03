@@ -192,10 +192,11 @@
         <hr class="divider" />
         <div class="container">
             <h2> Main Results</h2>
-            <p style="text-align: justify">We demonstrate high performance of X-Diffusion on BRATS dataset (see Table 1) compared to baselines. From a single slice from any axis, it generates the full 3D volume. Furthermore, we show that X-Diffusion preserves key features of the MRI notably tumour profiles. X-Diffusion shows good reconstruction capability on out-of-domain dataset such as knee MRIs (see Applications below). </p>
+            <p style="text-align: justify">We demonstrate high performance of X-Diffusion on BRATS dataset (see Table 1 and Figure 1) compared to baselines. From a single slice from any axis, it generates the full 3D volume. Furthermore, we show that X-Diffusion preserves key features of the MRI notably tumour profiles (see Figure 2). X-Diffusion shows good reconstruction capability on out-of-domain dataset such as knee MRIs (see Applications below). </p>
             <div class="row">
                 <div class="col-sm-12">
                     <img src="assets/XDiffusion_Table.png" style="max-width: 90%;"/>
+                    <p><span style="font-weight:bold">Table 1: Model Performance on Test Brain Data and Whole-Body MRIs.</span> We compare the MRI reconstruction for baselines ScoreMRI [19], TPDM [39] and our X-Diffusion model for varying input slice numbers in training and inference. We report the mean 3D test PSNR on BRATS (BR) brain dataset and the UK Biobank body dataset (UK). The results showcase huge improvement over the baselines, especially on the small number of input slices (particularly at 1). </p> 
                 </div>
             </div>
             <h2> Generated Brain Volumes from Single Slice</h2>
@@ -208,12 +209,14 @@
             <div class="row">
                 <div class="col-sm-12">
                     <img src="assets/Brain_Seg_Maps.png" style="max-width: 90%;"/>
+                    <p><span style="font-weight:bold">Figure 2. Visualisations of 3D Brain Generation.</span> We show examples of slices from generated 3D brain MRI volumes with varying slice index (top) and its ground-truth brain slices (bottom). We show the tumour profile segmentation map in all output and ground truth slices to highlight the differences and show the 3D tumor in the generated MRI and ground truth MRI in the most right column. Red is used for non-enhancing and necrotic tumor core, green for the peritumoral edema, and blue for the enhancing tumor core.</p> 
                 </div>
             </div>
             <h2> Generated Whole Body MRIs</h2>
             <div class="row">
                 <div class="col-sm-12">
-                    <img src="assets/Error_MRI_Generation.png" style="max-width: 100%;"/>
+                    <img src="assets/WholeBody_MRI_Generation.png" style="max-width: 100%;"/>
+                    <p><span style="font-weight:bold">Figure 3. Alignment and Error Spread of MRI Generation.</span> (left) We show from left to right: input DXA, ground-truth MRI, generated MRI, and overlay of the two modalities to test the alignment. The 3D PSNR for this example is 26.38 dB. (right) We show the Mean Square Error of the generated MRI from a single MRI slice (index 78) as a function of the output depth index. It shows that the error is not equally distributed in the generated MRI.</p> 
                 </div>
             </div>
             <h2> Applications</h2>
